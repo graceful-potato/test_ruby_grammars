@@ -1,16 +1,20 @@
 # Benchmarks for different ruby grammar files.
 
 ```
-Original ruby grammar file
-Tokenizing 595 lines
-Took 49.9 milliseconds
----------------------------------------------------------------------
 Ruby grammar file with combined if/unless and while/until rules
-Tokenizing 595 lines
-Took 118.7 milliseconds
+Tokenizing 611 lines
+Took 169 milliseconds
+---------------------------------------------------------------------
+Original ruby grammar file
+Tokenizing 611 lines
+Took 72 milliseconds
 ---------------------------------------------------------------------
 Ruby grammar file with splited if/unless and while/until rules
-Tokenizing 595 lines
-Took 89.1 milliseconds
+Tokenizing 611 lines
+Took 120 milliseconds
+---------------------------------------------------------------------
+Optimized Ruby grammar file
+Tokenizing 611 lines
+Took 85 milliseconds
 ---------------------------------------------------------------------
 ```

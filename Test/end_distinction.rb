@@ -3,15 +3,24 @@
 # -------------------------------------------
 
 # singleline
+class F; end
+class F end
+(class F end)
+
+
 class Foo; @@a = 1; end
 class Foo::Bar < M::Baz; @@a = 1; end
+class A class B end end
+class A; class B; end; end
 
 # multiline
 class Foo
   @@var = 1
   
-  $hello
-  @hello
+  $class = "myclass"
+  @@module = "mymodule"
+  class_name = "class_name"
+  module_name = "module_name"
 end
 
 # -------------------------------------------
@@ -21,9 +30,16 @@ end
 # singleline
 module Mod; @a = 1; end
 module ModOne::ModTwo; @a = 1; end
+module M module N end end
+module M; module N end end
+(module M module N end end)
 
 # multiline
 module Bar
+  $class = "myclass"
+  @module = "mymodule"
+  class_name = "class_name"
+  module_name = "module_name"
   class Foo
     @@var = 1
   end

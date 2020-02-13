@@ -12,7 +12,9 @@ function loadGrammar(scopeName) {
 	} else if (scopeName === 'source.combined.ruby') {
 		grammarPath = path.resolve(__dirname, 'Syntaxes', 'RubyCombined.plist');
 	} else if (scopeName === 'source.splited.ruby') {
-		grammarPath = path.resolve(__dirname, 'Syntaxes', 'RubySplited.plist');
+    grammarPath = path.resolve(__dirname, 'Syntaxes', 'RubySplited.plist');
+  } else if (scopeName === 'source.optimized.ruby') {
+		grammarPath = path.resolve(__dirname, 'Syntaxes', 'RubyOptimized.plist');
 	} else {
 		return null;
   }
@@ -25,13 +27,11 @@ const test = async (scope, message) => {
   const grammar = await registry.loadGrammar(scope)
   const t0 = Date.now()
   // --------
-  for (let i = 0; i < 10; i++) {
-    let ruleStack = vsctm.INITIAL;
-    for (let i = 0; i < content.length; i++) {
-        const line = content[i];
-        const lineTokens = grammar.tokenizeLine(line, ruleStack);
-        ruleStack = lineTokens.ruleStack;
-    }
+  let ruleStack = vsctm.INITIAL;
+  for (let i = 0; i < content.length; i++) {
+      const line = content[i];
+      const lineTokens = grammar.tokenizeLine(line, ruleStack);
+      ruleStack = lineTokens.ruleStack;
   }
   // --------
   const t1 = Date.now()
@@ -39,11 +39,12 @@ const test = async (scope, message) => {
 
   console.log(message);
   console.log(`Tokenizing ${content.length} lines`)
-  console.log('Took', ((t1 - t0) / 10), 'milliseconds');
+  console.log('Took', (t1 - t0), 'milliseconds');
   console.log('---------------------------------------------------------------------')
 }
 
 
-test('source.original.ruby', 'Original ruby grammar file')
 test('source.combined.ruby', 'Ruby grammar file with combined if/unless and while/until rules')
+test('source.original.ruby', 'Original ruby grammar file')
 test('source.splited.ruby', 'Ruby grammar file with splited if/unless and while/until rules')
+test('source.optimized.ruby', 'Optimized Ruby grammar file')
