@@ -3,18 +3,18 @@
 ```
 Ruby grammar file with combined if/unless and while/until rules
 Tokenizing 611 lines
-Took 169 milliseconds
+Took 168 milliseconds
 ---------------------------------------------------------------------
 Original ruby grammar file
 Tokenizing 611 lines
-Took 72 milliseconds
+Took 78 milliseconds
 ---------------------------------------------------------------------
 Ruby grammar file with splited if/unless and while/until rules
 Tokenizing 611 lines
-Took 120 milliseconds
+Took 117 milliseconds
 ---------------------------------------------------------------------
 Optimized Ruby grammar file
 Tokenizing 611 lines
-Took 85 milliseconds
+Took 93 milliseconds
 ---------------------------------------------------------------------
 ```

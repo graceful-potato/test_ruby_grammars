@@ -645,7 +645,7 @@
 			</dict>
 			<key>match</key>
 			<string>(?x)
-              (?=if\b|unless\b)
+              (?=\s*if\b|\s*unless\b)
 							(?&lt;=[}\])\w?!"'`])
 							(?&lt;!\Wif|^if|														# \WX|^X is equivalent to \bX
 										 \Wunless|^unless|										# this is workaround for code editors which doesn't support onigomo
@@ -667,7 +667,7 @@
 		<dict>
 			<key>begin</key>
 			<string>(?x)
-              (?=if\b)
+              (?=\s*if\b)
 							(?&lt;!::)
 							(?&lt;=&lt;|&amp;|\||=|&gt;|~|\^|[+\-*/%]|\.{2}|\.{3}|^|;|:|\[|\(|\{|,|
 										 \Wif|^if|														# \WX|^X is equivalent to \bX
@@ -722,7 +722,7 @@
 		<dict>
 			<key>begin</key>
 			<string>(?x)
-              (?=unless\b)
+              (?=\s*unless\b)
 							(?&lt;!::)
 							(?&lt;=&lt;|&amp;|\||=|&gt;|~|\^|[+\-*/%]|\.{2}|\.{3}|^|;|:|\[|\(|\{|,|
 										 \Wif|^if|														# \WX|^X is equivalent to \bX
@@ -790,7 +790,7 @@
 			</dict>
 			<key>match</key>
 			<string>(?x)
-              (?=while\b|until\b)
+              (?=\s*while\b|\s*until\b)
 							(?&lt;=[}\])\w?!"'`])
 							(?&lt;!\Wif|^if|														# \WX|^X is equivalent to \bX
 										 \Wunless|^unless|										# this is workaround for code editors which doesn't support onigomo
@@ -812,7 +812,7 @@
 		<dict>
 			<key>begin</key>
 			<string>(?x)
-              (?=while\b)
+              (?=\s*while\b)
 							(?&lt;!::)
 							(?&lt;=&lt;|&amp;|\||=|&gt;|~|\^|[+\-*/%]|\.{2}|\.{3}|^|;|:|\[|\(|\{|,|
 										 \Wif|^if|														# \WX|^X is equivalent to \bX
@@ -888,7 +888,7 @@
 		<dict>
 			<key>begin</key>
 			<string>(?x)
-              (?=until\b)
+              (?=\s*until\b)
 							(?&lt;!::)
 							(?&lt;=&lt;|&amp;|\||=|&gt;|~|\^|[+\-*/%]|\.{2}|\.{3}|^|;|:|\[|\(|\{|,|
 										 \Wif|^if|														# \WX|^X is equivalent to \bX
